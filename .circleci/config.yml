@@ -1,17 +1,16 @@
 version: 2.1
 
 jobs:
-  echo:
+  chk:
     docker:
-      - image: cimg/base:stable
+      - image: 'mcr.microsoft.com/dotnet/sdk:5.0'
     steps:
+      - checkout
       - run:
-          name: Greet
-          command: echo "I love ${COLOR} builds."
-          environment:
-            COLOR: "green"
+          name: ls
+          command: ls -lah
 
 workflows:
   main:
     jobs:
-      - echo
+      - chk
