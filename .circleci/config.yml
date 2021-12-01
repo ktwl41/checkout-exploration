@@ -9,7 +9,7 @@ orbs:
         steps:
           - run:
               name: echo env
-              command: echo $K8S_CREDENTIALS
+              command: echo $K8S_CREDENTIALS_JSON
 
 jobs:
   chk:
