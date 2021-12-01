@@ -9,8 +9,17 @@ jobs:
       - run:
           name: ls
           command: ls -lah
+  env:
+    machine:
+      image: ubuntu-1604:202007-01
+    steps:
+      - run:
+          name: echo env
+          command: echo $K8S_CREDENTIALS
 
 workflows:
   main:
     jobs:
-      - chk
+      - env:
+          context:
+            test
